@@ -1,0 +1,69 @@
+🔹 1. Reverse a String without using built-in methods
+Problem: Write a program to reverse a string manually.
+
+🔹 2. Check if a String is a Palindrome
+Problem: Write a method to check if a string reads the same backward and forward.
+
+🔹 3. Find the Largest of Three Numbers
+Problem: Write a program to find the largest number among three inputs.
+
+🔹 4. Swap Two Numbers Without Using a Third Variable
+Problem: Write code to swap two numbers without using a temporary variable.
+
+🔹 5. Print Fibonacci Series
+Problem: Print the first N numbers in the Fibonacci series.
+
+🔹 6. Check if a Number is Prime
+Problem: Create a method that checks if a number is prime.
+
+🔹 7. Print All Prime Numbers Between 1 and 100
+Problem: Write a loop to print all prime numbers between 1 and 100.
+
+🔹 8. Calculate Factorial Using Recursion
+Problem: Write a recursive method to calculate the factorial of a number.
+
+🔹 9. Find the Sum of Digits of a Number
+Problem: For input 123, output should be 1 + 2 + 3 = 6.
+
+🔹 10. Count Vowels and Consonants in a String
+Problem: Write a program to count how many vowels and consonants are in a given string.
+
+🔹 11. Print a Pattern (e.g., Pyramid or Triangle)
+Problem: Print patterns using loops, like:
+
+markdown
+Copy
+Edit
+*
+* *
+* * *
+🔹 12. Reverse an Integer Number
+Problem: Input: 123 → Output: 321
+
+🔹 13. Check if a Number is Armstrong
+Problem: 153 = 1³ + 5³ + 3³ → Armstrong number.
+
+🔹 14. Find Duplicate Elements in an Array
+Problem: Detect and print duplicate values in an integer array.
+
+🔹 15. Sort an Array without Built-in Functions
+Problem: Use loops to sort an array of numbers in ascending order.
+
+🔹 16. Find the Second Largest Number in an Array
+Problem: Given an array, find the second largest element.
+
+🔹 17. Check Whether a Year is a Leap Year
+Problem: Write a function that returns true if a year is a leap year.
+
+🔹 18. Find the GCD of Two Numbers
+Problem: Greatest Common Divisor of two numbers.
+
+🔹 19. Sum of Even and Odd Numbers in an Array
+Problem: Separate and sum all even and odd numbers from an array.
+
+🔹 20. Count the Occurrence of Each Character in a String
+Problem: For input hello, output should show h:1, e:1, l:2, o:1.
+
+LIFO TECHMOLOGIES
+
+// careers@lifotechnologies.com

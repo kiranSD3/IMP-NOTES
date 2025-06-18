@@ -1,0 +1,177 @@
+1) Reverse the string without using built in function
+
+using System;
+
+public class HelloWorld
+{
+public static void Main()
+{
+    Console.Write("Enter your string to Reverse: ");
+    string getData = Console.ReadLine();
+    string reverseData = ReverseOutput(getData);
+    Console.WriteLine(reverseData);
+    
+}
+    
+    static string ReverseOutput(string chckRev)
+    {
+        string result = "";
+        
+        for (int i = chckRev.Length - 1; i >= 0; i--)
+        {
+            result = result + chckRev[i];
+        }
+        return result;
+    }
+    
+    
+}
+
+=============================================================================
+
+2) Write a C# program to check whether a given string is a palindrome or not.
+
+A palindrome is a word, phrase, number, or other sequence of characters which reads the same forward and backward.
+
+
+public class HelloWorld
+{
+public static void Main()
+{
+
+Console.Write("Enter your string to check Palindrome: ");
+
+string Palindate = Console.ReadLine();
+
+bool Ispalindrome = chckpalin(Palindate);
+
+if(Ispalindrome)
+{
+    Console.Write("Its a Palindrome");
+}else{
+    Console.Write("Its not a Palindrome");
+}
+
+}
+
+// Racecar then it should be treated as racecar and malay alam malayalam
+
+static bool chckpalin (string str)
+{
+    str = str.ToLower().Replace(" ", "");
+    
+    int start = 0;
+    int end = str.Length - 1;
+    
+    while  (start < end )
+    {
+        if (str[start] != str[end])
+        {
+            return false;
+        }
+        
+        start++;
+        end--;
+    }
+    return true;
+}
+
+}
+
+===================================================================
+
+3) Find the Largest of Three Numbers
+
+we can do this by 2 methods one is if-else or Math.Max();
+
+public static void Main ()
+{
+    Console.Write("Enter Number 1: ");
+    int num1 = Convert.ToInt32(Console.ReadLine());
+    
+    Console.Write("Enter Number 2: ");
+    int num2 = Convert.ToInt32(Console.ReadLine());
+    
+    Console.Write("Enter Number 3: ");
+    int num3 = Convert.ToInt32(Console.ReadLine());
+
+    <!-- if-else method -->
+
+    // if (num1 >= num2 && num1 >= num3){
+    //     Console.Write("Number 1 is largest: " + num1);
+    // }else if (num2 >= num1 && num2 >= num3){
+    //     Console.Write("Number 2 is largest: " + num2);
+    // }
+    // else{
+    //     Console.Write("Number 3 is largest: " + num3);
+    // }
+
+ <!-- Math.Max() method -->
+    
+    int largest;
+    
+    largest = Math.Max(num1, Math.Max(num2, num3));
+    
+    Console.Write("The Largest number is " + largest);
+}
+
+===================================================================================
+
+4) Swap Two Numbers Without Using a Third Variable
+
+Substring() => Substring is a method that used to extract a part of a string;
+
+public static void Main ()
+{
+    string str1 = "Hello";
+    string str2 = "World";
+    
+    str1 = str1 + str2;
+    
+    str2 = str1.Substring(0, str1.Length - str2.Length);
+    
+     str1 = str1.Substring(str2.Length);
+    
+    Console.WriteLine(str1);
+    Console.Write(str2);
+}
+
+======================================================================================
+
+5) Print Fibonacci Series
+
+Int.Parse() - > it convert string to int only if the string contain valid integer representations.(cannot handle Null)
+
+Convert.ToInt32() -> it convert string, bool, double can handle null. if the input is null it will return 0. throws error for non-numeric string.
+
+public static void Main()
+{
+    Console.Write("Enter the total num: ");
+    int enteredNum = Convert.ToInt32(Console.ReadLine());
+    int newNum =  FibSeriesFun(enteredNum);
+    //Console.Write("Total Series: " + newNum );
+}
+    
+    static int FibSeriesFun(int str)
+    {
+        int first = 0;
+        int second = 2;
+        Console.Write("Fibonacci Series:");
+        for(int i = 0; i < str; i++ )
+        {
+            
+        Console.Write(first + " ");
+        int next = first + second;
+        first = second;
+        second = next ;
+        }
+        return second;
+    }
+
+==============================================================================================
+
+
+
+
+
+
