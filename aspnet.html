@@ -1,0 +1,121 @@
+Service
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TaskTracker.DTO.TaskDTO;
+using TaskTracker.Interface;
+using TaskTracker.Models;
+
+namespace TaskTracker.Services
+{
+    public class TaskItemService : ITask
+    {
+        private readonly LmsContext _context;
+
+        public TaskItemService(LmsContext context)
+        {
+            _context = context;
+        }
+
+        public Task<List<TaskResponseDTO>> GetAllTaskasync()
+        {
+            var tasklist = _context.Taskitems.Select(t => new TaskResponseDTO
+            {
+                Taskid = t.Taskid,
+                TaskName = t.TaskName,
+                Description = t.Description,
+                Status = t.Status,
+                Modifiedat = t.Modifiedat,
+                Createdat = t.Createdat
+            }).ToListAsync();
+
+            return tasklist;    
+        }
+
+        public async Task<TaskResponseDTO> GetTaskByIDasync(int id)
+        {
+            var tasklist = await _context.Taskitems.FirstOrDefaultAsync(t => t.Taskid == id);
+
+            if (tasklist == null)
+            {
+                return null; // or throw an exception if preferred
+            }
+
+
+            return new TaskResponseDTO
+            {
+                Taskid = tasklist.Taskid,
+                TaskName = tasklist.TaskName,
+                Description = tasklist.Description,
+                Status = tasklist.Status,
+                Createdat = tasklist.Createdat,
+                Modifiedat = tasklist.Modifiedat
+            };
+        }
+
+        public Task<TaskCreateDTO> CreateTaskasync(TaskCreateDTO taskCreateDTO)
+        {
+            var newTask = new TaskItem
+            {
+
+                TaskName = taskCreateDTO.TaskName,
+                Description = taskCreateDTO.Description,
+                Status = taskCreateDTO.Status,
+                Createdat = taskCreateDTO.Createdat ?? DateTime.Now
+            };
+
+            _context.Taskitems.Add(newTask);
+            _context.SaveChanges();
+
+            return Task.FromResult(new TaskCreateDTO
+            {
+                TaskName = newTask.TaskName,
+                Description = newTask.Description,
+                Status = newTask.Status,
+                Createdat = newTask.Createdat
+            });
+        }    
+
+        public async Task<TaskUpdateDTO> UpdateTaskasync(int id, TaskUpdateDTO taskupdate)
+        {
+            var updateTask = await _context.Taskitems.FirstOrDefaultAsync(t => t.Taskid == id);
+
+            if (updateTask == null)
+            {
+                return null;
+            }
+
+            updateTask.TaskName = taskupdate.TaskName;
+            updateTask.Description = taskupdate.Description;
+            updateTask.Status = taskupdate.Status;
+            updateTask.Modifiedat = DateTime.Now;
+            _context.Taskitems.Update(updateTask);
+            await _context.SaveChangesAsync();
+
+            return taskupdate;
+        }
+
+        public async Task<bool> DeleteTask(int id)
+        {
+            var res = await _context.Taskitems.FirstOrDefaultAsync(t => t.Taskid == id);
+
+            if (res == null)
+            {
+                return false; // Task not found
+            }
+
+            res.Status = -1;
+            _context.Taskitems.Update(res);
+
+            await _context.SaveChangesAsync();
+
+            return true; // Task deleted successfully
+        }
+
+    }
+}
+
+
+<!-- Service end -->
+
+
