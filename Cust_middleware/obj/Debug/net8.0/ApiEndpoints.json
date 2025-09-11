@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "Cust_middleware.Controllers.TestController",
+    "Method": "DivideByZero",
+    "RelativePath": "api/Test/divide",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cust_middleware.Controllers.TestController",
+    "Method": "Normal",
+    "RelativePath": "api/Test/normal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
