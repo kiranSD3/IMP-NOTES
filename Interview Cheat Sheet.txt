@@ -149,9 +149,17 @@ A lambda expression is a short way of writing anonymous methods using => syntax.
 
 Dependency Injection is a design pattern where dependencies are provided to a class instead of creating them inside. It supports the OOP principle of loose coupling by separating object creation from usage. In ASP.NET Core Web API, services are injected into controllers using constructors.
 
-26. 
+26.  What is Delegates in C#?
 
+Delegates in C# are type-safe references to methods. They let us pass methods as parameters, implement callbacks, and build flexible and decoupled code. Without delegates, methods would be tightly bound to specific implementations.
 
+27. What is IEnumerable?
+
+IEnumerable is an interface in C# that represents a collection we can loop through using foreach. It is mainly used for read-only access to data. while working with LINQ Queries.
+
+28. What is IQueryable?
+
+IQueryable is an interface used to build queries for remote data sources like databases. EF Core translates it into SQL so filtering happens at the database level, not in memory.
 
 
 
