@@ -161,6 +161,16 @@ IEnumerable is an interface in C# that represents a collection we can loop throu
 
 IQueryable is an interface used to build queries for remote data sources like databases. EF Core translates it into SQL so filtering happens at the database level, not in memory.
 
+29. What is the difference between LINQ First(), FirstOrDefault(), Single(), and SingleOrDefault() in Entity Framework?
+
+30. What is the difference between AddTransient, AddScoped, and AddSingleton lifetimes in ASP.NET Core Dependency Injection?
+
+31. What are ACID properties in SQL databases, and why are they important?
+
+32. In Entity Framework Core, what is the difference between Eager Loading, Lazy Loading, and Explicit Loading?
+
+33. 
+
 
 
 
