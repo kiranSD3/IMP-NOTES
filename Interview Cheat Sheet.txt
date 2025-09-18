@@ -163,13 +163,73 @@ IQueryable is an interface used to build queries for remote data sources like da
 
 29. What is the difference between LINQ First(), FirstOrDefault(), Single(), and SingleOrDefault() in Entity Framework?
 
+First() - Returns the first element that matches the condition.
+
+FirstOrDefault() - Returns the first element if found.
+
+Single() - Expects exactly one element in the result.
+
+SingleOrDefault() - Expects zero or one element in the result.
+
+FindAsync() (Entity Framework only) - Used to find an entity by primary key.
+
 30. What is the difference between AddTransient, AddScoped, and AddSingleton lifetimes in ASP.NET Core Dependency Injection?
+
+AddTransient - Lifetime: A new instance is created every time it’s requested.
+
+AddScoped - Lifetime: One instance is created per HTTP request.
+
+AddSingleton - Lifetime: A single instance is created once for the entire application lifetime.
 
 31. What are ACID properties in SQL databases, and why are they important?
 
-32. In Entity Framework Core, what is the difference between Eager Loading, Lazy Loading, and Explicit Loading?
+ACID stands for:
 
-33. 
+Atomicity
+
+All or nothing rule.
+
+A transaction must execute completely or not at all.
+
+Example: In money transfer, if ₹500 is deducted from Account A, it must also be credited to Account B. If one fails, the whole transaction rolls back.
+
+Consistency
+
+A transaction should always bring the database from one valid state to another.
+
+Constraints, rules, and triggers must be preserved.
+
+Example: If Account A has ₹1000, you cannot withdraw ₹2000 because it violates consistency rules.
+
+Isolation
+
+Multiple transactions running at the same time should not interfere with each other.
+
+Each transaction should behave as if it’s the only one executing.
+
+Example: Two people buying the last seat in a train — isolation ensures only one booking succeeds.
+
+Durability
+
+Once a transaction is committed, the changes are permanent, even if the system crashes.
+
+Example: If money is transferred and the system crashes, the committed transfer still remains in the database after restart.
+
+32. Dependency Injection ?
+
+Dependency Injection means instead of creating dependencies inside a class, we inject them from outside through constructor.
+This reduces tight coupling, improves testability, and makes code easier to maintain.
+
+
+33. Async/Await vs. Multithreading
+
+Async/await is about asynchronous programming (freeing a thread during I/O wait), while multithreading is about parallel execution of multiple tasks on different CPU cores.
+ Async is for I/O-bound work, multithreading is for CPU-bound work.
+
+Async/Await :
+
+ async/await in C# is used to write asynchronous code that doesn’t block the thread.
+  It improves responsiveness and scalability, especially in I/O-bound operations like DB queries or API calls.”
 
 
 
