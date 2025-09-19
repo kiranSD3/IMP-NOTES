@@ -231,6 +231,24 @@ Async/Await :
  async/await in C# is used to write asynchronous code that doesn’t block the thread.
   It improves responsiveness and scalability, especially in I/O-bound operations like DB queries or API calls.”
 
+  Normalization
+De-Normalization
+(1NF, 2NF, 3NF)
+Primary Key, Unique Key,
+Char, Varchar, Nchar
+
+2-> 
+
+Clustered Indexes
+Non - Clustered Indexes
+Function,
+SP, Triggers, CTE, Transaction
+
+3 -> 
+
+Wildcard operators,
+Joins
+
 
 
 
